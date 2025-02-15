@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Lab01.WebDemo.Models;
 
 namespace Lab01.WebDemo.Controllers
 {
@@ -13,7 +14,7 @@ namespace Lab01.WebDemo.Controllers
         public ActionResult Index()
         {
             var All_tin = from tt in data.Tintucs select tt;
-            return View(All_tin);
+            return View(All_tin.ToList());
         }
     }
 }

@@ -8,7 +8,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using Lab01.WebDemo.Models;
 
 namespace Lab01.WebDemo.Models
 {
@@ -26,8 +25,8 @@ namespace Lab01.WebDemo.Models
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Tintuc")]
 	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
 	{
-
-        private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
+		
+		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
