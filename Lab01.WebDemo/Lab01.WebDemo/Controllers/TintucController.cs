@@ -1,20 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Lab01.WebDemo.Models;
 
 namespace Lab01.WebDemo.Controllers
 {
-    public class TintucController : Controller
+    public class TintucController : BaseController
     {
-        // GET: Tintuc
-        NewsDataContext data = new NewsDataContext();
         public ActionResult Index()
         {
-            var All_tin = from tt in data.Tintucs select tt;
-            return View(All_tin.ToList());
+            // Lấy tất cả tin tức để hiển thị trên trang chủ
+            var allNews = db.Tintucs.ToList();
+            return View(allNews);
+        }
+
+        public ActionResult TheLoai(int id)
+        {
+            // Lọc tin tức theo thể loại được chọn
+            var newsByCategory = db.Tintucs.Where(tt => tt.IDLoai == id).ToList();
+            var category = db.Theloaitins.FirstOrDefault(c => c.IDLoai == id);
+
+            if (category != null)
+            {
+                ViewBag.CategoryName = category.Tentheloai;
+            }
+
+            return View(newsByCategory);
         }
     }
 }

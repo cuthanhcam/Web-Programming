@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Lab01.WebDemo.Models;
 
 namespace Lab01.WebDemo.Controllers
 {
-    public class TheloaitinController : Controller
+    public class TheloaitinController : BaseController
     {
-        // GET: Theloaitin
-        NewsDataContext data = new NewsDataContext();
         public ActionResult Index()
         {
-            var All_Loaitin = from tt in data.Theloaitins select tt;
-            return View(All_Loaitin.ToList());
+            // Lấy danh sách thể loại tin tức
+            var allCategories = db.Theloaitins.ToList();
+            return View(allCategories);
         }
     }
 }

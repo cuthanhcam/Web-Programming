@@ -1,0 +1,223 @@
+﻿/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cấu trúc trang */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.body-content {
+    flex: 1;
+    padding: 20px 0;
+}
+
+/* Navbar - Menu thể loại */
+.navbar {
+    background-color: #fff;
+    border-bottom: 2px solid #d0021b;
+}
+
+.navbar-nav {
+    flex-direction: row;
+    white-space: nowrap;
+    overflow-x: auto;
+    width: 100%;
+}
+
+    .navbar-nav .nav-item {
+        margin-right: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+        .navbar-nav .nav-link:hover {
+            color: #d0021b;
+        }
+
+/* Header */
+header {
+    background-color: #d0021b;
+    color: white;
+    padding: 15px 0;
+}
+
+    header h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    header .text-right a {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        header .text-right a:hover {
+            text-decoration: underline;
+        }
+
+/* Footer cố định */
+footer {
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+    border-top: 1px solid #ddd;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .footer-links a:hover {
+        color: #d0021b;
+    }
+
+/* Card tin tức */
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d0021b;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #555;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.btn-outline-secondary {
+    border-color: #d0021b;
+    color: #d0021b;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #d0021b;
+    color: white;
+}
+
+
+/* Hiển thị ngày bên cạnh tiêu đề */
+.date-display {
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* Navbar - Menu thể loại tự động xuống dòng */
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng khi tràn */
+    width: 100%;
+}
+
+.navbar-nav .nav-item {
+    flex: 1 1 auto; /* Chia đều không gian */
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.navbar-nav .nav-link {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+/* Điều chỉnh navbar để hiển thị một hàng ngang */
+.navbar-nav {
+    display: flex;
+    flex-wrap: nowrap; /* Không cho phép xuống dòng */
+    overflow-x: auto; /* Hiển thị thanh cuộn ngang nếu cần */
+    white-space: nowrap;
+}
+
+    .navbar-nav .nav-item {
+        flex: 0 0 auto; /* Đảm bảo mỗi mục có kích thước cố định */
+        margin-right: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+
+    /* Ẩn thanh cuộn trên trình duyệt nhưng vẫn cho phép cuộn */
+    .navbar-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+.navbar-nav {
+    -ms-overflow-style: none; /* Ẩn thanh cuộn trên IE và Edge */
+    scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+}
+
+/* Đưa menu về bên trái */
+.navbar-nav {
+    justify-content: flex-start; /* Căn trái */
+    display: flex;
+    flex-wrap: nowrap; /* Không cho xuống dòng */
+    overflow-x: auto; /* Cho phép cuộn ngang nếu cần */
+    white-space: nowrap;
+    padding-left: 0; /* Loại bỏ padding mặc định */
+}
+
+    /* Giảm khoảng cách giữa các mục */
+    .navbar-nav .nav-item {
+        flex: 0 0 auto;
+        margin-right: 10px; /* Giảm khoảng cách để tránh tràn */
+    }
+
+/* Căn trái thanh navigation */
+.navbar-collapse {
+    justify-content: flex-start !important;
+}
+
+/* Điều chỉnh menu thể loại */
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap; /* Đảm bảo các mục xuống dòng nếu không đủ chỗ */
+    justify-content: flex-start; /* Căn trái */
+    gap: 10px; /* Giảm khoảng cách giữa các mục */
+    max-width: 100%; /* Không vượt quá chiều rộng */
+    overflow: hidden; /* Ẩn nếu bị tràn */
+}
+
+    /* Điều chỉnh từng mục menu */
+    .navbar-nav .nav-item {
+        flex: 0 1 auto; /* Giữ kích thước linh hoạt */
+        white-space: nowrap; /* Không cho xuống dòng trong mục */
+    }
+
+/* Đảm bảo container của menu không quá lớn */
+.navbar-collapse {
+    overflow: hidden;
+    max-width: 100%;
+}
+ 

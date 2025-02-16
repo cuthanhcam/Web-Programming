@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Lab01.WebDemo.Models.Tintuc>
 
 @{
-    ViewBag.Title = "Tin Tức";
+    ViewBag.Title = "Tin tức theo thể loại";
 }
 
-<h2>Danh sách tin tức</h2>
+<h2>@ViewBag.CategoryName</h2>
 
 <div class="row">
     @foreach (var item in Model)
@@ -18,7 +18,6 @@
                         <div class="btn-group">
                             <a href="#" class="btn btn-sm btn-outline-secondary">Xem chi tiết</a>
                         </div>
-                        <small class="text-muted">@item.Theloaitin.Tentheloai</small>
                     </div>
                 </div>
             </div>
