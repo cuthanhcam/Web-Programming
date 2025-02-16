@@ -1,2 +1,2 @@
 # Web-Programming
- All exercises of the subject
+ All exercises of the subject at school
