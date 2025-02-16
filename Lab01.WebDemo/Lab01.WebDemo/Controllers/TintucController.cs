@@ -10,7 +10,7 @@ namespace Lab01.WebDemo.Controllers
     public class TintucController : Controller
     {
         // GET: Tintuc
-        DataClasses1DataContext data = new DataClasses1DataContext();
+        NewsDataContext data = new NewsDataContext();
         public ActionResult Index()
         {
             var All_tin = from tt in data.Tintucs select tt;

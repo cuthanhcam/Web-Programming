@@ -23,7 +23,7 @@ namespace Lab01.WebDemo.Models
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Tintuc")]
-	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
+	public partial class NewsDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -38,25 +38,25 @@ namespace Lab01.WebDemo.Models
     partial void DeleteTintuc(Tintuc instance);
     #endregion
 		
-		public DataClasses1DataContext(string connection) : 
+		public NewsDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(System.Data.IDbConnection connection) : 
+		public NewsDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public NewsDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public NewsDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();

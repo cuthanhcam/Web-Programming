@@ -1,26 +1,27 @@
-﻿
+﻿@model IEnumerable<Lab01.WebDemo.Models.Tintuc>
+
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Tin Tức";
 }
 
-<h2>Danh sách các tin tức</h2>
+<h2>Danh sách tin tức</h2>
 
-<table border="1">
-    <tr>
-        <th> ID Tin</th>
-        <th> Loại Tin</th>
-        <th> Tiêu đề tin</th>
-        <th> Nội dung tin</th>
-    </tr>
+<div class="row">
     @foreach (var item in Model)
     {
-        <tr>
-            <td> @item.IdTin</td>
-            <td> @item.Theloaitin.Tentheloai</td>
-            <td> @item.Tieudetin</td>
-            <td width="300">  @item.Noidungtin</td>
-        </tr>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Tieudetin</h5>
+                    <p class="card-text">@item.Noidungtin</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-sm btn-outline-secondary">Xem chi tiết</a>
+                        </div>
+                        <small class="text-muted">@item.IDLoai</small>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
-</table>
-
+</div>

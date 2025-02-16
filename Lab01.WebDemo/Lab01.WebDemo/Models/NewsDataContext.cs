@@ -6,9 +6,9 @@ using System.Web;
 
 namespace Lab01.WebDemo.Models
 {
-    public partial class DataClasses1DataContext
+    public partial class NewsDataContext
     {
-        public DataClasses1DataContext() : base(ConfigurationManager.ConnectionStrings["TintucConnectionString"].ConnectionString, mappingSource)
+        public NewsDataContext() : base(ConfigurationManager.ConnectionStrings["TintucConnectionString"].ConnectionString, mappingSource)
         {
             OnCreated();
         }
