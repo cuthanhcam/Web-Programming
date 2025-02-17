@@ -207,6 +207,8 @@ namespace Lab01.WebDemo.Models
 		
 		private string _Noidungtin;
 		
+		private string _ImagePath;
+		
 		private EntityRef<Theloaitin> _Theloaitin;
 		
     #region Extensibility Method Definitions
@@ -221,6 +223,8 @@ namespace Lab01.WebDemo.Models
     partial void OnTieudetinChanged();
     partial void OnNoidungtinChanging(string value);
     partial void OnNoidungtinChanged();
+    partial void OnImagePathChanging(string value);
+    partial void OnImagePathChanged();
     #endregion
 		
 		public Tintuc()
@@ -273,7 +277,7 @@ namespace Lab01.WebDemo.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tieudetin", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tieudetin", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string Tieudetin
 		{
 			get
@@ -309,6 +313,26 @@ namespace Lab01.WebDemo.Models
 					this._Noidungtin = value;
 					this.SendPropertyChanged("Noidungtin");
 					this.OnNoidungtinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImagePath", DbType="NVarChar(255)")]
+		public string ImagePath
+		{
+			get
+			{
+				return this._ImagePath;
+			}
+			set
+			{
+				if ((this._ImagePath != value))
+				{
+					this.OnImagePathChanging(value);
+					this.SendPropertyChanging();
+					this._ImagePath = value;
+					this.SendPropertyChanged("ImagePath");
+					this.OnImagePathChanged();
 				}
 			}
 		}

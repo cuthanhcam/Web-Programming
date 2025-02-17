@@ -11,6 +11,12 @@
     {
         <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
+                <!-- Hiển thị ảnh tin tức -->
+                <img src="@Url.Content("~/Images/" + (string.IsNullOrEmpty(item.ImagePath) ? "default.jpg" : item.ImagePath))"
+                     class="card-img-top news-image"
+                     alt="@item.Tieudetin">
+
+
                 <div class="card-body">
                     <h5 class="card-title">@item.Tieudetin</h5>
                     <p class="card-text">@item.Noidungtin</p>

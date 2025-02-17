@@ -220,4 +220,39 @@ footer {
     overflow: hidden;
     max-width: 100%;
 }
- 
+
+.news-image {
+    width: 100%; /* Ảnh chiếm toàn bộ chiều rộng của card */
+    height: 200px; /* Đặt chiều cao cố định */
+    object-fit: cover; /* Cắt ảnh để vừa khít mà không bị méo */
+    border-radius: 5px; /* Làm bo góc ảnh cho đẹp */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Giữ cố định */
+    min-height: 200px; /* Đảm bảo hình ảnh không nhỏ hơn */
+    object-fit: cover;
+}
+
+.card-text {
+    height: 60px; /* Điều chỉnh theo giao diện mong muốn */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.card {
+    height: 100%; /* Đồng nhất chiều cao */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
