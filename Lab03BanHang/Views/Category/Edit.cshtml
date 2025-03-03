@@ -1,0 +1,17 @@
+@model Lab03BanHang.Models.Category
+
+@{
+    ViewData["Title"] = "Edit Category";
+}
+
+<h2>Edit Category</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Lab03BanHang.Models.Product>
+
+<h2 class="text-center mt-4">Product List</h2>
+<div class="container">
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4 col-lg-3 mb-4">
+                <div class="card">
+                    <img src="@product.GetImageUrl()" class="card-img-top" alt="@product.Name">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text text-success"><strong>$@product.Price</strong></p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,215 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fc;
+    color: #333;
+}
+
+/* Header & Navigation */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0062cc;
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-nav h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Product List */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.product-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-card h2 {
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0062cc;
+}
+
+/* Button */
+.button {
+    background: #198754;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+/* Footer */
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    background: #222;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0062cc;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.footer-item p {
+    font-size: 14px;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+.footer-item a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.footer-item a:hover {
+    color: #0062cc;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Đảm bảo chiều cao đồng nhất */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    height: 200px; /* Cố định chiều cao ảnh */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    height: 50px; /* Giới hạn chiều cao tiêu đề */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #198754;
+    font-weight: bold;
+}
+
+.card-body .btn {
+    margin-top: auto;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.product-img {
+    width: 100px;
+    height: auto;
+}

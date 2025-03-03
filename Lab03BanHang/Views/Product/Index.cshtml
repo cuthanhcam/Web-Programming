@@ -1,0 +1,42 @@
+@model IEnumerable<Lab03BanHang.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h2>Product List</h2>
+
+<!-- Nút Create -->
+<a asp-action="Create" class="btn btn-primary mb-3">Create New Product</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td><img src="@product.GetImageUrl()" class="product-img" alt="@product.Name"></td>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Description</td>
+                <td>@product.Category?.Name</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
