@@ -1,0 +1,27 @@
+@model List<Lab04.Exams.Models.Category>
+@{
+    ViewData["Title"] = "Category List";
+}
+
+<h2>Category List</h2>
+<a asp-action="Add" class="btn btn-primary mb-3">Create New</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Name</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@category.Id" class="btn btn-warning">Update</a>
+                    <a asp-action="Delete" asp-route-id="@category.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

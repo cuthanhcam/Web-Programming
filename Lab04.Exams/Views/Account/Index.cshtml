@@ -1,0 +1,31 @@
+@model List<Lab04.Exams.Models.User>
+@{
+    ViewData["Title"] = "User List";
+}
+
+<h2>User List</h2>
+<a asp-action="Add" class="btn btn-primary mb-3">Add New User</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.Role</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@user.Id" class="btn btn-warning">Update</a>
+                    <a asp-action="Delete" asp-route-id="@user.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,31 @@
+@model List<Lab04.Exams.Models.Product>
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<h2>Product List</h2>
+<a asp-action="Add" class="btn btn-primary mb-3">Create New</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>$@product.Price</td>
+                <td>@product.Category?.Name</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@product.Id" class="btn btn-warning">Update</a>
+                    <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
